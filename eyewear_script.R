@@ -30,3 +30,4 @@ target <- imageList['LabA3']
 rasterList_lanRGB <- patLanRGB(imageList, landmarkList, RGB, transformRef = target, resampleFactor = 1, 
                                colOffset = 0.01, crop = TRUE, res = 300, adjustCoords = TRUE, plot = 'stack')
 
+
