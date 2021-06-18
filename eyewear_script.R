@@ -19,6 +19,9 @@ prepath <- 'images/Edit1_Enhanced'
 extension <- '.png'
 imageList <- makeList(IDlist, 'image', prepath, extension)
 
+## Everything above here works fine I think
+## I think the landmarks I made in imageJ are also correct? 
+
 # align color patterns
 RGB <- c(207, 90, 0) # paint color -- possible issue here?
 
@@ -33,4 +36,5 @@ RGB <- c(207, 90, 0) # paint color -- possible issue here?
 target <- imageList['LabA3'] # doesn't work, returns error message
 rasterList_lanRGB <- patLanRGB(imageList, landmarkList, RGB, transformRef = 'LabA3', resampleFactor = 1, 
                                colOffset = 0.01, crop = TRUE, res = 300, adjustCoords = TRUE, plot = 'stack')
-
+# possibly extraction is too narrow, not enough color variation? 
+# Any ideas on solution would be appreciated
