@@ -1,0 +1,32 @@
+# code and resulting messages
+
+> library(patternize)
+> IDlist <- c('LabA3',
++             'LabB3',
++             'ReadingA2',
++             'ReadingB3')
+> prepath <- 'landmarks'
+> extension <- '_landmarks.txt'
+> landmarkList <- makeList(IDlist, 'landmark', prepath, extension)
+[1] "sample 1 LabA3 added to list"
+[1] "sample 2 LabB3 added to list"
+[1] "sample 3 ReadingA2 added to list"
+[1] "sample 4 ReadingB3 added to list"
+> RGB <- c(211, 111, 0) # paint color -- possible issue here?
+> rasterList_lanRGB <- patLanRGB(imageList, landmarkList, RGB, transformRef = 'LabA3', resampleFactor = 1, 
++                                colOffset = 0.01, crop = TRUE, res = 300, adjustCoords = TRUE, plot = 'stack')
+[1] "sample 1 LabA3 added to array"
+[1] "sample 2 LabB3 added to array"
+[1] "sample 3 ReadingA2 added to array"
+[1] "sample 4 ReadingB3 added to array"
+[1] "The RGB range does not seem to overlap with any of the RGB values in the image LabA3"
+[1] "sample LabA3 done and added to rasterList"
+[1] "The RGB range does not seem to overlap with any of the RGB values in the image LabB3"
+[1] "sample LabB3 done and added to rasterList"
+[1] "The RGB range does not seem to overlap with any of the RGB values in the image ReadingA2"
+[1] "sample ReadingA2 done and added to rasterList"
+[1] "The RGB range does not seem to overlap with any of the RGB values in the image ReadingB3"
+[1] "sample ReadingB3 done and added to rasterList"
+>
+
+# As you can see, the RGB value seems to be the main issue, not sure how to solve.

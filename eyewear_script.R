@@ -1,5 +1,21 @@
 # Eyewear particles script - analysis
 
+## General Comments
+# I think I have set up the landmarks correctly
+# For the comments, I basically did an outline of the shape around the eye and nose area.
+# I used FIJI for it
+#
+# I am using the images in Edit1_Enhanced, where I turned up the hue/saturation of the images to \
+# differentiate a bit more
+#
+# For selecting the RGB value, I used a color picker in Photoshop to select a color, since selectRGB() doesn't work
+# I suspect that that the RGB value is causing the program to not work, since there is not enough variation between
+# the subject and the paint. I can't seem to solve it.
+#
+# I have included the code output from the console in output.txt
+# Thanks
+## 
+
 # load patternize
 library(patternize)
 
@@ -23,7 +39,7 @@ imageList <- makeList(IDlist, 'image', prepath, extension)
 ## I think the landmarks I made in imageJ are also correct? 
 
 # align color patterns
-RGB <- c(207, 90, 0) # paint color -- possible issue here?
+RGB <- c(211, 111, 0) # paint color -- possible issue here?
 
 ## issue with sampleRGB(), doesn't work, gives error message, color intensity too high, any ideas?
 # image <- raster::stack("C:/Users/steve/Documents/eyewearanalysis/images/Edit1_Enhanced/LabA3.png")
@@ -32,6 +48,7 @@ RGB <- c(207, 90, 0) # paint color -- possible issue here?
 ###########
 # MAJOR ISSUE
 # Returns blank, nothing
+# Have tried many colOffset values, not sure why it doesn't work
 ###########
 target <- imageList['LabA3'] # doesn't work, returns error message
 rasterList_lanRGB <- patLanRGB(imageList, landmarkList, RGB, transformRef = 'LabA3', resampleFactor = 1, 
