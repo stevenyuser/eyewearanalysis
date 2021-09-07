@@ -26,20 +26,20 @@ IDlist <- c('LabA3',
             'ReadingB3')
 
 # landmark list
-prepath <- 'landmarks'
+prepath <- 'landmarks/landmarks_jpg'
 extension <- '_landmarks.txt'
 landmarkList <- makeList(IDlist, 'landmark', prepath, extension)
 
 # image list
 prepath <- 'images/Edit1_Enhanced'
-extension <- '.png'
+extension <- '.jpg'
 imageList <- makeList(IDlist, 'image', prepath, extension)
 
 ## Everything above here works fine I think
 ## I think the landmarks I made in imageJ are also correct? 
 
 # align color patterns
-RGB <- c(211, 111, 0) # paint color -- possible issue here?
+RGB <- c(208, 99, 0) # paint color -- possible issue here?
 
 ## issue with sampleRGB(), doesn't work, gives error message, color intensity too high, any ideas?
 # image <- raster::stack("C:/Users/steve/Documents/eyewearanalysis/images/Edit1_Enhanced/LabA3.png")
@@ -55,3 +55,4 @@ rasterList_lanRGB <- patLanRGB(imageList, landmarkList, RGB, transformRef = 'Lab
                                colOffset = 0.01, crop = TRUE, res = 300, adjustCoords = TRUE, plot = 'stack')
 # possibly extraction is too narrow, not enough color variation? 
 # Any ideas on solution would be appreciated
+
